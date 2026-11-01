@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ITC Door Guide</title>
+<style>
+:root{--bg:#1a1a1a;--card:#242424;--line:#333;--text:#f2f2f2;--muted:#a6a6a6;--red:#e53b2e;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.5}
+.wrap{max-width:560px;margin:0 auto;padding:28px 18px 40px}
+header{text-align:center;margin-bottom:28px}
+.logo{display:inline-flex;align-items:center;gap:0;font-weight:800;font-size:34px;letter-spacing:2px;background:#111;border-radius:50%;width:96px;height:96px;justify-content:center;border:1px solid var(--line)}
+.logo b{display:inline-block;width:12px;height:30px;background:var(--red);border-radius:2px;margin-right:5px}
+h1{margin:16px 0 4px;font-size:28px}
+h1 span{color:var(--red)}
+header p{margin:0;color:var(--muted)}
+.step{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:12px;padding:16px;margin-bottom:12px}
+.n{flex:none;width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;font-weight:700;display:grid;place-items:center}
+.step h2{margin:0 0 4px;font-size:17px}
+.step p{margin:0;color:var(--muted)}
+.code{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:10px;background:#111;border:1px dashed var(--red);border-radius:8px;padding:10px 12px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:18px;letter-spacing:1px}
+button{background:var(--red);color:#fff;border:0;border-radius:6px;padding:6px 12px;font-weight:600;cursor:pointer}
+.btn{display:inline-block;margin-top:10px;background:var(--red);color:#fff;text-decoration:none;border-radius:8px;padding:9px 14px;font-weight:600}
+.tag{color:var(--red);font-weight:700}
+.note{margin-top:20px;padding:14px 16px;border-radius:12px;background:#111;border:1px solid var(--line);color:var(--muted);font-size:14px}
+.note strong{color:var(--text)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo"><b></b>TC</div>
+    <h1>ITC <span>Door Guide</span></h1>
+    <p>Get access in 3 quick steps</p>
+  </header>
+
+  <div class="step"><div class="n">1</div><div>
+    <h2>Change your hotspot name</h2>
+    <p>Open your phone’s hotspot settings and set the network name to:</p>
+    <div class="code"><span>DOOR_ACCESS</span><button onclick="cp(this)">Copy</button></div>
+  </div></div>
+
+  <div class="step"><div class="n">2</div><div>
+    <h2>Change your hotspot password</h2>
+    <p>Set the hotspot password to:</p>
+    <div class="code"><span>DOOR_ACCESS</span><button onclick="cp(this)">Copy</button></div>
+  </div></div>
+
+  <div class="step"><div class="n">3</div><div>
+    <h2>Scan your card</h2>
+    <p>Place your card above the LCD screen.</p>
+  </div></div>
+
+  <div class="step"><div class="n">4</div><div>
+    <h2>Non-exclusive board members: send your name</h2>
+    <p>If you are not an exclusive board member, your access must be approved before the door opens. The system also needs your data to recognize members, so when you scan your card, post your name in the Discord channel and tag <span class="tag">@IBK</span>.</p>
+    <p style="margin-top:8px">The channel has a 1-hour slow mode, so just write your name when you scan so we know who wants to enter.</p>
+    <a class="btn" href="https://discord.com/channels/800009861982191617/1566571022415560714" target="_blank" rel="noopener">Open Discord channel</a>
+  </div></div>
+
+  <div class="note"><strong>Note:</strong> once the Wi-Fi is set up locally, the door will connect automatically and these steps will no longer be needed.</div>
+</div>
+<script>
+function cp(b){var t="DOOR_ACCESS";try{navigator.clipboard.writeText(t)}catch(e){}b.textContent="Copied";setTimeout(function(){b.textContent="Copy"},1500)}
+</script>
+</body>
+</html>
